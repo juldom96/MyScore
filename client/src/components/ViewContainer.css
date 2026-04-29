@@ -1,0 +1,10 @@
+.view-container {
+  width: 80vw;
+  margin: auto;
+  padding: 2vh 0;
+  max-width: 300px;
+  overflow-y: hidden;
+}
+.view-container i {
+  margin-right: 8px;
+}

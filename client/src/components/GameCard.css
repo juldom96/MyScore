@@ -1,0 +1,12 @@
+.game-card {
+  cursor: pointer;
+  width: 80vw;
+  max-width: 300px;
+  color: white;
+  padding: 15px 20px;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 1.2rem;
+}

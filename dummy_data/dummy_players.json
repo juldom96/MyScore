@@ -1,0 +1,33 @@
+[
+  {
+    "id": "1",
+    "name": "Jule",
+    "color": "blue",
+    "avatar": "weasel.png",
+    "played_games": []
+  },
+  {
+    "id": "2",
+    "name": "David",
+    "color": "green",
+    "avatar": "giraffe.png"
+  },
+  {
+    "id": "3",
+    "name": "Pia",
+    "color": "yellow",
+    "avatar": "woman1.png"
+  },
+  {
+    "id": "4",
+    "name": "Markus",
+    "color": "red",
+    "avatar": "fox.png"
+  },
+  {
+    "id": "5",
+    "name": "Alexander-Johann-Friedrich",
+    "color": "pink",
+    "avatar": "man1.png"
+  }
+]

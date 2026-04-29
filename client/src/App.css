@@ -1,0 +1,108 @@
+* {
+  color: var(--light);
+}
+
+body {
+  background-color: var(--main-bg-color) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
+h1 {
+  margin: 3vh 0 !important;
+}
+h2 {
+  margin: 1.5vh 0 !important;
+  font-size: 1.4rem !important;
+}
+
+h3 {
+  margin: 0 !important;
+  font-size: 0.9rem !important;
+}
+input[type='text'],
+textarea {
+  background-color: var(--input-bg-color) !important;
+  border: none !important;
+}
+
+.btn-warning {
+  background-color: var(--warning-color) !important;
+  border-color: var(--warning-color) !important;
+}
+.btn-success {
+  background-color: var(--success-color) !important;
+  border-color: var(--success-color) !important;
+}
+
+/*Theme for NavBar*/
+.bg-default {
+  background-color: #fff !important;
+}
+
+.bg-pride {
+  background: rgb(255, 193, 7);
+  background: repeating-linear-gradient(
+    -45deg,
+    #dc3545,
+    #dc3545 4vw,
+    tomato 4vw,
+    tomato 8vw,
+    #ffc107 8vw,
+    #ffc107 12vw,
+    yellowgreen 12vw,
+    yellowgreen 16vw,
+    deepskyblue 16vw,
+    deepskyblue 20vw,
+    blueviolet 20vw,
+    blueviolet 24vw
+  );
+}
+.i-pride {
+  color: var(--light) !important;
+}
+
+.custom.react-toggle--checked .react-toggle-track {
+  background-color: var(--light);
+}
+
+.react-toggle--checked .react-toggle-thumb {
+  border: 2px solid #ab199f !important;
+}
+.react-toggle--checked .react-toggle-thumb {
+  background-color: #ab199f;
+}
+
+.react-toggle-track {
+  background-color: var(--main-bg-color) !important;
+}
+.react-toggle--checked .react-toggle-track {
+  background-color: var(--light) !important;
+}
+
+/*Tables*/
+.styled-table {
+  width: 100%;
+  margin: 20px 0;
+}
+.styled-table th,
+.styled-table td {
+  border: 5px solid var(--main-bg-color);
+
+  text-align: center;
+}
+.styled-table td {
+  background-color: rgb(30, 30, 58);
+}
+.styled-table td:has(input) {
+  background-color: #464465;
+}
+.styled-table th {
+  background-color: rgb(35, 35, 77);
+}

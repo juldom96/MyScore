@@ -1,0 +1,44 @@
+#start-view-container {
+  width: 80vw;
+  max-width: 300px;
+  height: 100vh;
+  margin: auto;
+  padding: 20vh 0;
+}
+#start-view-container i {
+  margin-left: 15px;
+  font-size: 1.5rem;
+}
+#start-view-container .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-bg-color) !important;
+  font-size: 1.4rem !important;
+  font-weight: 400 !important;
+}
+
+@media screen and (orientation: landscape) {
+  #start-view-container {
+    padding: 10vh 0;
+  }
+}
+
+#start-view-container .btn-warning i {
+  color: rgb(255, 170, 0) !important;
+}
+
+#start-view-container .btn-info i {
+  color: rgb(0, 106, 255) !important;
+}
+
+#start-view-container .btn-success i {
+  color: rgb(8, 95, 40) !important;
+}
+#start-view-container .btn-danger i {
+  color: rgb(110, 19, 1) !important;
+}
+
+#start-view-container .btn-primary i {
+  color: rgb(1, 47, 98) !important;
+}

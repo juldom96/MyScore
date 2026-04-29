@@ -1,0 +1,11 @@
+[
+  {
+    "date": "2024-01-03 12:20",
+    "game": "Everdell",
+    "players": [
+	{ "player": 1, "score": 23, "placement": 2 },
+	{ "player": 2, "score": 11, "placement": 3 },
+	{ "player": 457, "score": 33, "placement": 1 }
+	]
+  }
+]

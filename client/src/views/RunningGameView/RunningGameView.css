@@ -1,0 +1,136 @@
+#score {
+  table-layout: fixed;
+  width: max-content;
+  margin: auto;
+}
+#score th,
+#score td {
+  padding: 10px 15px !important;
+  box-sizing: unset;
+}
+#score td:has(input) {
+  padding: 5px 40px;
+}
+.no-right-border {
+  border-right: 0 !important;
+}
+#score td:has(input:active),
+#score td:has(input:focus) {
+  background-color: #686686 !important;
+}
+input:focus,
+input:active {
+  outline: none !important;
+}
+.no-left-border {
+  border-left: 0 !important;
+}
+th,
+table i,
+input,
+tfoot {
+  font-size: 1.2rem !important;
+}
+#score tbody tr > td:first-of-type {
+  text-align: left;
+}
+td,
+th {
+  padding: 5px;
+  max-width: 150px;
+  border: none;
+  vertical-align: middle;
+}
+
+input {
+  text-align: center;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+input::placeholder {
+  color: rgb(118, 118, 118);
+}
+
+#score th,
+#score td {
+  border: 8px solid var(--main-bg-color);
+}
+.centered {
+  text-align: center;
+}
+.totals {
+  font-weight: 700;
+}
+td.count {
+  vertical-align: middle;
+  text-align: center;
+}
+.category {
+  display: flex;
+  align-items: center;
+}
+.category {
+  text-align: left !important;
+  min-width: 25vw;
+}
+.margin-left {
+  margin-left: 7vw;
+}
+#score th {
+  font-weight: 500;
+}
+
+#score-table-container {
+  width: 100vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 0 10vw;
+}
+[id*='-info'] > .tooltip-inner {
+  background-color: rgb(214, 218, 239) !important;
+  color: black;
+}
+.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: rgb(214, 218, 239) !important ;
+}
+@media screen and (orientation: portrait) {
+  #scoe-table-container {
+  }
+}
+@media screen and (orientation: landscape) {
+  #score-table-container {
+  }
+}
+@media screen and (min-width: 900px) {
+  #score-table-container {
+    max-width: 90vw;
+    margin: auto;
+    padding: 0;
+    overflow: auto;
+  }
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.tooltip-inner {
+  background-color: rgb(255, 255, 255) !important;
+  color: var(--main-bg-color) !important;
+}
+
+.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: white !important;
+}
