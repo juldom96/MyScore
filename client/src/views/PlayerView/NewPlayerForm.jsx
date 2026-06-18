@@ -36,7 +36,7 @@ export default function NewPlayerForm({
     existingPlayer ? existingPlayer.avatar : null
   );
 
-  const [_id, set_id] = useState(
+  const [_id] = useState(
     existingPlayer ? existingPlayer._id : crypto.randomUUID()
   );
 
