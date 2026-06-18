@@ -6,8 +6,9 @@ import PlayerView from './views/PlayerView/PlayerView';
 import HistoryView from './views/HistoryView/HistoryView';
 import RunningGameView from './views/RunningGameView/RunningGameView';
 import { useEffect, useState } from 'react';
-import { getAllDataFromCollection } from './util/indexedDb.js';
+import { getAllDataFromCollection, addDataToCollection } from './util/indexedDb.js';
 import * as CRUD from './util/crud.js';
+import { dummyGames, dummyPlayers } from './util/dummyData.js';
 import {
   GAMES_VIEW,
   PLAYER_VIEW,
@@ -19,34 +20,6 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
-  useEffect(() => {
-    if ('serviceWorker' in navigator && 'SyncManager' in window) {
-      const registerSync = () => {
-        navigator.serviceWorker.ready
-          .then((registration) => {
-            return registration.sync.register('sync-indexeddb');
-          })
-          .then(() => {
-            console.log('Sync registered');
-          })
-          .catch((err) => {
-            console.error('Sync registration failed:', err);
-          });
-      };
-
-      // Sofortige Registrierung beim Laden der App
-      registerSync();
-
-      // Registrierung alle 15 Minuten
-      const intervalId = setInterval(() => {
-        registerSync();
-      }, 15 * 60 * 1000);
-
-      // Cleanup beim Unmounten der Komponente
-      return () => clearInterval(intervalId);
-    }
-  }, []);
-
   const [showView, setShowView] = useState(null);
   const [gameIsRunning, setGameIsRunning] = useState(false);
   const [chosenGame, setChosenGame] = useState(null);
@@ -91,9 +64,23 @@ function App() {
   //schreibt Daten aus IndexedDB in States, sobald der SW fertig installiert ist
   useEffect(() => {
     async function fetchData() {
-      const playersData = await getAllDataFromCollection('all_players');
-      const gamesData = await getAllDataFromCollection('all_games');
+      let playersData = await getAllDataFromCollection('all_players');
+      let gamesData = await getAllDataFromCollection('all_games');
       const historyData = await getAllDataFromCollection('history');
+
+      if (gamesData.length === 0) {
+        for (const game of dummyGames) {
+          await addDataToCollection(game, 'all_games');
+        }
+        gamesData = await getAllDataFromCollection('all_games');
+      }
+      if (playersData.length === 0) {
+        for (const player of dummyPlayers) {
+          await addDataToCollection(player, 'all_players');
+        }
+        playersData = await getAllDataFromCollection('all_players');
+      }
+
       setPlayers(playersData);
       setGames(gamesData);
       setHistory(historyData);

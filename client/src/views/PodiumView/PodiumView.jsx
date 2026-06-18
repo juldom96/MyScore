@@ -2,8 +2,6 @@ import Button from 'react-bootstrap/Button';
 import ViewContainer from '../../components/ViewContainer';
 import Podium from './components/Podium';
 import './PodiumView.css';
-import { ObjectId } from 'bson';
-
 import ScoreList from './components/ScoreList';
 import { useEffect, useState } from 'react';
 
@@ -62,7 +60,7 @@ export default function PodiumView({
       });
     });
     const date = new Date();
-    const _id = new ObjectId().toHexString();
+    const _id = crypto.randomUUID();
     const newHistoryEntry = {
       _id: _id,
       date: date,

@@ -1,6 +1,5 @@
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
-import { ObjectId } from 'bson';
 
 export default function NewGameForm({ games, addGame, goBack }) {
   const [gameName, setGameName] = useState('');
@@ -65,7 +64,7 @@ export default function NewGameForm({ games, addGame, goBack }) {
 
   const saveGame = () => {
     if (validateForm()) {
-      const _id = new ObjectId().toHexString();
+      const _id = crypto.randomUUID();
       const newGame = {
         _id: _id,
         name: gameName.trim(),

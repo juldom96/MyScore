@@ -4,7 +4,6 @@ import ColorCarousel from './ColorCarousel';
 import Button from 'react-bootstrap/Button';
 import ImageUploader from './ImageUploader';
 import { useState, useRef, useEffect } from 'react';
-import { ObjectId } from 'bson';
 import { upload, setProfilePicture } from '../../util/avatarSelectionHandlers';
 import { SELFIE } from '../../util/enums';
 
@@ -38,7 +37,7 @@ export default function NewPlayerForm({
   );
 
   const [_id, set_id] = useState(
-    existingPlayer ? existingPlayer._id : new ObjectId().toHexString()
+    existingPlayer ? existingPlayer._id : crypto.randomUUID()
   );
 
   useEffect(() => {
